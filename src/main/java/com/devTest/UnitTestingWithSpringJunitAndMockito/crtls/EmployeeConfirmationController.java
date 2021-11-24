@@ -19,4 +19,9 @@ public class EmployeeConfirmationController {
         EmployeeConfirmResponse confirmResponse =  confirmationService.confirmEmployee(employeeId, criteria);
         return confirmResponse;
     }
+
+    @GetMapping("/api/{employeeId}/confirm-details")
+    public EmployeeConfirmResponse confirmEmployee(@PathVariable("employeeId") int employeeId) {
+        return new EmployeeConfirmResponse("001","confirm", true);
+    }
 }

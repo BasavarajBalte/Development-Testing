@@ -9,6 +9,6 @@ public class EmployeeConfirmationService {
 
     public EmployeeConfirmResponse confirmEmployee(int employeeId,EmployeeConfirmationCriteria employeeConfirmationCriteria) {
         //confirmation logic like get emp data from repository and update
-        return new EmployeeConfirmResponse();
+        return new EmployeeConfirmResponse(employeeConfirmationCriteria.getEmployeeNo(),"confirm", true);
     }
 }

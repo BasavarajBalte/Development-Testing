@@ -3,6 +3,7 @@ package com.devTest.UnitTestingWithSpringJunitAndMockito.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.lang.NonNull;
 
 import java.time.LocalDate;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 public class EmployeeConfirmationCriteria {
+    @NonNull
     private String employeeNo;
     private String name;
     private LocalDate joinDate;
