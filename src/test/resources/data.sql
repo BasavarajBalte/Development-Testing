@@ -1,0 +1,1 @@
+insert into employee(id,name,employeeno) values(2,'ram','10102')
