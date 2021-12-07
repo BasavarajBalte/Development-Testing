@@ -7,7 +7,7 @@ Import as Maven project
 
 
 set environment variable of spring profile:
-spring_profiles_active= dev/test
+`spring_profiles_active= dev/test`
 
 test: Connect to H2 database
 Dev: postgres database
