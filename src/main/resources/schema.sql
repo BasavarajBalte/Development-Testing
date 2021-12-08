@@ -1,1 +1,1 @@
-create table employee(id integer not null,name varchar(255),employeeno varchar(255),primary key (id))
+create table IF NOT EXISTS employee(id integer not null,name varchar(255),employeeno varchar(255),primary key (id))
