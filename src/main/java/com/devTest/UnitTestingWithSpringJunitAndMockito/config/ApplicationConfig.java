@@ -9,6 +9,11 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "com.devTest.UnitTestingWithSpringJunitAndMockito.repository")
+@ComponentScans({
+        @ComponentScan("com.devTest.UnitTestingWithSpringJunitAndMockito"),
+        @ComponentScan("com.devTest.UnitTestingWithSpringJunitAndMockito.model")
+})
 public class ApplicationConfig {
 
     @Profile(value = "dev")

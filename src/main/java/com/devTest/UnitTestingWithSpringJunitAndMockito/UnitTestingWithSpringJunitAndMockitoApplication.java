@@ -9,11 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 //@EnableAutoConfiguration
-@EnableJpaRepositories(basePackages = "com.devTest.UnitTestingWithSpringJunitAndMockito.repository")
-@ComponentScans({
-		@ComponentScan("com.devTest.UnitTestingWithSpringJunitAndMockito"),
-		@ComponentScan("com.devTest.UnitTestingWithSpringJunitAndMockito.model")
-})
 public class UnitTestingWithSpringJunitAndMockitoApplication {
 
 	public static void main(String[] args) {
