@@ -1,5 +1,7 @@
 package com.devTest.UnitTestingWithSpringJunitAndMockito.integration;
 
+
+import com.devTest.UnitTestingWithSpringJunitAndMockito.UnitTestingWithSpringJunitAndMockitoApplication;
 import com.devTest.UnitTestingWithSpringJunitAndMockito.dto.EmployeeDTO;
 import com.devTest.UnitTestingWithSpringJunitAndMockito.model.Employee;
 import com.devTest.UnitTestingWithSpringJunitAndMockito.repository.EmployeeReposiotry;
@@ -10,20 +12,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.TestPropertySource;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(locations = "/employee-test-configuration.yml")
+@SpringBootTest(classes = UnitTestingWithSpringJunitAndMockitoApplication.class,webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@AutoConfigureMockMvc
+@TestPropertySource(locations = "classpath:employee-test-configuration.properties")
 public class EmployeeCtrlTest {
 
-    @Autowired
-    private TestRestTemplate restTemplate;
 
     @Autowired
     private EmployeeReposiotry employeeReposiotry;
@@ -32,6 +34,7 @@ public class EmployeeCtrlTest {
     private EmployeeService employeeService;
 
     private ObjectMapper mapper;
+
 
     @BeforeEach
     public void setUp() {
